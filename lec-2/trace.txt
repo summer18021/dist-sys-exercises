@@ -1,0 +1,77 @@
+#Homework2#
+*****************************************************************
+Team Member: 
+	Yuan Gao, Bei Xia
+Conversion:
+	pounds(lbs) ---> Japanese Yen(y)
+	pounds(lbs) <--- Japanese Yen(y)
+The following texting session just shows one of conversions: 
+	pounds(lbs) <--- Japanese Yen(y)
+*****************************************************************
+Servers(All completed by ourselves):
+	1.convServer.py
+		Conversion:	pounds <-> ounces
+		Language:	Python
+		Run Server:	python convServer.py 
+		(Default Port:1111)
+	2.ConvServer.java
+		Conversion:	ounces of bananas <-> dollars
+		Language:	Java
+		Run Server:	javac ConvServer.java
+				java ConvServer
+		(Default Port:2222)
+	3.convServer_1.py
+		Conversion:	dollars <-> Japanese Yen
+		Language:	Python
+		Run Server:	python convServer_1.py
+		(Default Port:3333)
+*****************************************************************
+Proxy Server:
+	ProxyServer.java
+		Conversion:	pounds <-> Japanese Yen
+		Language:	Java
+		Run Server:	javac ProxyServer.java
+				java ProxyServer
+		(Default Port:5555)
+*****************************************************************
+Telnet testing Session:
+	yuangao0702: ~ $ telnet 127.0.0.1 5555
+	Trying 127.0.0.1...
+	Connected to 127.0.0.1.
+	Escape character is '^]'.
+	**************************************************************************
+	Welcome to the pounds(lbs) <---> Japanese Yen(y) Java-based conversion server!
+	Conversion: <input unit> <output unit> <input amount>(lbs y XX)or(y lbs XX)
+	**************************************************************************
+	y lbs 119.9
+ 
+	y $ 119.9
+	1.0
+ 	
+	$ oz 1.0	
+	20.0
+	 
+	oz lbs20.0
+	1.25
+	
+	y 119.9 = 1.25 lbs 
+	Connection closed by foreign host.
+*****************************************************************
+ProxyServer testing Session:
+	yuangao0702: ~/dist-sys-exercises/lec-2/conversions/templates/proxy $ java ProxyServer                                   
+	Started server on port 5555
+ 
+	Accepted connection from client
+	Received message: y lbs 119.9
+	**************************************************************************
+	Welcome to the Dollars ($) <---> Japanese Yen (y) Python-based conversion server!
+	: <input unit> <output unit> <input amount>($ y XX)or(y $ XX)
+	**************************************************************************
+	**************************************************************************
+	Welcome to the Dollars ($) <---> Ounces (oz) Java-based conversion server!
+	Conversion: <input unit> <output unit> <input amount>($ oz XX)or(oz $ XX)
+	*************************************************************************
+	**************************************************************************
+	Welcome to the Pounds (lbs) <---> Ounces (oz) Python-based conversion server!
+	Conversion: <input unit> <output unit> <input amount>(lbs oz XX)or(oz lbs XX)
+	**************************************************************************
