@@ -96,7 +96,19 @@ public class ConvServer {
 
 		socket.close();
 	}
+	private static void print()
+			throws UnknownHostException, IOException {
+		// TODO Auto-generated method stub
+		Socket socket = new Socket("127.0.0.1", 9993);
+		InputStreamReader streamReader = new InputStreamReader(
+				socket.getInputStream());
+		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+		BufferedReader reader = new BufferedReader(streamReader);
 
+		out.println("ConvServer Started!");
+		
+		socket.close();
+	}
 	public static void main(String[] args) throws Exception {
 
 		// check if argument length is invalid
@@ -110,6 +122,7 @@ public class ConvServer {
 		System.err.println("Started server on port " + port);
 		// start server
 		start();
+		print();
 		// wait for connections, and process
 		System.out.println("type 'q' to exit");
 		Scanner sc = new Scanner(System.in);
