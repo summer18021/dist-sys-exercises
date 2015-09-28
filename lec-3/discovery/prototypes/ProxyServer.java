@@ -48,7 +48,19 @@ public class ProxyServer {
 		in.close();
 		clientSocket.close();
 	}
+	private static void print()
+			throws UnknownHostException, IOException {
+		// TODO Auto-generated method stub
+		Socket socket = new Socket("127.0.0.1", 9993);
+		InputStreamReader streamReader = new InputStreamReader(
+				socket.getInputStream());
+		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+		BufferedReader reader = new BufferedReader(streamReader);
 
+		out.println("ProxyServer Started!");
+		
+		socket.close();
+	}
 	private static String lookup(String str1, String str2)
 			throws UnknownHostException, IOException {
 		// TODO Auto-generated method stub
@@ -76,6 +88,7 @@ public class ProxyServer {
 		// }
 		// create socket
 		// int port = Integer.parseInt(args[0]);
+		print();
 		int port = 2222;
 		ServerSocket serverSocket = new ServerSocket(port);
 		System.err.println("Started server on port " + port);
